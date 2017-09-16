@@ -46,6 +46,16 @@ With [npm](https://npmjs.org) do:
 npm install capture-chrome
 ```
 
+## CI
+
+This project will work in CI environments like Travis and AppVeyor without any additional configuration. It fetches Chromium itself and doesn't need a X server to run.
+
+## Related projects
+
+- __[capture-screenshot](https://github.com/juliangruber/capture-screenshot)__ &mdash; Capture screenshots in multiple browsers
+- __[capture-electron](https://github.com/juliangruber/capture-electron)__ &mdash; Capture screenshots using Electron
+- __[capture-phantomjs](https://github.com/juliangruber/capture-phantomjs)__ &mdash; Capture screenshots using PhantomJS
+
 ## License
 
 (MIT)
