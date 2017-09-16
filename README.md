@@ -3,7 +3,7 @@
 Capture screenshots using Chrome's new headless mode. This means it does _not_
 require a graphical environment / X server to run!
 
-Also uou don't even need to have Chromium or Chrome installed, this will fetch an up
+Also you don't even need to have Chromium or Chrome installed, this will fetch an up
 to date binary for you.
 
 [![build status](https://secure.travis-ci.org/juliangruber/capture-chrome.png)](http://travis-ci.org/juliangruber/capture-chrome)
