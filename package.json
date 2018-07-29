@@ -17,9 +17,9 @@
     "temp-dir": "^1.0.0"
   },
   "devDependencies": {
-    "prettier-standard": "^6.0.0",
-    "standard": "^10.0.3",
-    "tap": "^10.7.2"
+    "prettier-standard": "^8.0.1",
+    "standard": "^11.0.1",
+    "tap": "^12.0.1"
   },
   "keywords": [
     "chrome",
