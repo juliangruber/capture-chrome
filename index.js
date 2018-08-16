@@ -1,9 +1,7 @@
 const { promisify } = require('util')
-const exec = promisify(require('child_process').exec)
 const readFile = promisify(require('fs').readFile)
 const mkdir = promisify(require('fs').mkdir)
 const tempDir = require('temp-dir')
-const escape = require('shell-escape')
 const puppeteer = require('puppeteer')
 
 module.exports = async ({ 
@@ -27,7 +25,6 @@ module.exports = async ({
     await timeoutHandler(timeout)
     await page.screenshot({path: `${cwd}/screenshot.png`});
     browser.close();
-    const file = await readFile(`${cwd}/screenshot.png`)
   })();
 
   return readFile(`${cwd}/screenshot.png`)
