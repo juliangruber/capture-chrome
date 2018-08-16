@@ -12,9 +12,9 @@
   "homepage": "https://github.com/juliangruber/capture-chrome",
   "main": "index.js",
   "dependencies": {
-    "chromium-prebuilt": "^2.0.0",
-    "shell-escape": "^0.2.0",
-    "temp-dir": "^1.0.0"
+    "puppeteer": "^1.7.0",
+    "temp-dir": "^1.0.0",
+    "yoctodelay": "^1.1.0"
   },
   "devDependencies": {
     "prettier-standard": "^8.0.1",

@@ -28,7 +28,7 @@ capture({
 
 ## API
 
-### screenshot({ url, width = 1024, height = 768 })
+### screenshot({ url, width = 1024, height = 768, wait = 0 })
 
 Capture a screenshot of `url`, returns a `Promise` which resolves with a buffer.
 
@@ -37,6 +37,7 @@ Options:
 - `url` Page url
 - `width` Viewport width
 - `height` Viewport height
+- `wait` Time in `ms` to wait after the page finished loading all resources
 
 ## Installation
 
