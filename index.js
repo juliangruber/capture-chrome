@@ -18,7 +18,7 @@ module.exports = async ({
 
   await mkdir(cwd)
   await (async() => {
-    const browser = await puppeteer.launch();
+    const browser = await puppeteer.launch({args: ['--no-sandbox']});
     const page = await browser.newPage();
     await page.setViewport({width: width, height: height})
     await page.goto(url, {waitUntil: 'networkidle2'});
