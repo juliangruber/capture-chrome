@@ -28,9 +28,8 @@ module.exports = async ({
     await page.screenshot({path: `${cwd}/screenshot.png`});
     browser.close();
     const file = await readFile(`${cwd}/screenshot.png`)
-    console.log(file)
   })();
 
   return readFile(`${cwd}/screenshot.png`)
-  
+
 }
