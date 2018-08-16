@@ -3,6 +3,7 @@ const readFile = promisify(require('fs').readFile)
 const mkdir = promisify(require('fs').mkdir)
 const tempDir = require('temp-dir')
 const puppeteer = require('puppeteer')
+const sleep = require('yoctodelay')
 
 module.exports = async ({
   url,
@@ -14,17 +15,13 @@ module.exports = async ({
     .toString(16)
     .slice(2)}`
 
-  function timeoutHandler (ms) {
-    return new Promise(resolve => setTimeout(resolve, ms))
-  }
-
   await mkdir(cwd)
   await (async () => {
     const browser = await puppeteer.launch({ args: ['--no-sandbox'] })
     const page = await browser.newPage()
     await page.setViewport({ width: width, height: height })
     await page.goto(url, { waitUntil: 'networkidle2' })
-    await timeoutHandler(timeout)
+    await sleep(timeout)
     await page.screenshot({ path: `${cwd}/screenshot.png` })
     browser.close()
   })()
