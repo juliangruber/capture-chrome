@@ -6,7 +6,7 @@ require a graphical environment / X server to run!
 Also you don't even need to have Chromium or Chrome installed, this will fetch an up
 to date binary for you.
 
-[![build status](https://secure.travis-ci.org/juliangruber/capture-chrome.png)](http://travis-ci.org/juliangruber/capture-chrome) [![Greenkeeper badge](https://badges.greenkeeper.io/juliangruber/capture-chrome.svg)](https://greenkeeper.io/)
+[![build status](https://secure.travis-ci.org/juliangruber/capture-chrome.svg)](https://travis-ci.org/juliangruber/capture-chrome) [![Greenkeeper badge](https://badges.greenkeeper.io/juliangruber/capture-chrome.svg)](https://greenkeeper.io/)
 
 ## Example
 
