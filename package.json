@@ -19,7 +19,7 @@
   "devDependencies": {
     "prettier-standard": "^14.0.3",
     "standard": "^14.0.0",
-    "tap": "^12.0.1"
+    "tap": "^14.6.4"
   },
   "keywords": [
     "chrome",
