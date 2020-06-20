@@ -9,7 +9,8 @@ module.exports = async ({
   url,
   width: width = 1024,
   height: height = 768,
-  wait: wait = 0
+  wait: wait = 0,
+  transparent = false
 }) => {
   const cwd = `${tempDir}/${Date.now()}${Math.random()
     .toString(16)
@@ -20,7 +21,8 @@ module.exports = async ({
   await page.setViewport({ width, height })
   await page.goto(url, { waitUntil: 'networkidle2' })
   await sleep(wait)
-  await page.screenshot({ path: `${cwd}/screenshot.png` })
+  const element = await page.$('body')
+  await element.screenshot({ path: `${cwd}/screenshot.png`, omitBackground: transparent })
   browser.close()
   return readFile(`${cwd}/screenshot.png`)
 }
