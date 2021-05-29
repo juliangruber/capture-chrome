@@ -1,15 +1,16 @@
+'use strict'
+
 const { test } = require('tap')
 const screenshot = require('.')
 const http = require('http')
+const { promisify } = require('util')
 
 let server, url
 
-test('setup', t => {
+test('setup', async t => {
   server = http.createServer((req, res) => res.end('ohai!'))
-  server.listen(() => {
-    url = `http://localhost:${server.address().port}`
-    t.end()
-  })
+  await promisify(server.listen.bind(server))()
+  url = `http://localhost:${server.address().port}`
 })
 
 test('screenshot', async t => {
@@ -18,7 +19,6 @@ test('screenshot', async t => {
   t.ok(Buffer.isBuffer(pic))
 })
 
-test('cleanup', t => {
+test('cleanup', async t => {
   server.close()
-  t.end()
 })
