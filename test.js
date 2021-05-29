@@ -1,24 +1,23 @@
-'use strict'
+import tap from 'tap'
+import screenshot from './index.js'
+import http from 'http'
+import { promisify } from 'util'
 
-const { test } = require('tap')
-const screenshot = require('.')
-const http = require('http')
-const { promisify } = require('util')
+let server
+let url
 
-let server, url
-
-test('setup', async t => {
+tap.test('setup', async t => {
   server = http.createServer((req, res) => res.end('ohai!'))
   await promisify(server.listen.bind(server))()
   url = `http://localhost:${server.address().port}`
 })
 
-test('screenshot', async t => {
+tap.test('screenshot', async t => {
   const pic = await screenshot({ url })
   t.ok(pic)
   t.ok(Buffer.isBuffer(pic))
 })
 
-test('cleanup', async t => {
+tap.test('cleanup', async t => {
   server.close()
 })

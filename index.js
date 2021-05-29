@@ -1,11 +1,9 @@
-'use strict'
+import fs from 'fs/promises'
+import tempDir from 'temp-dir'
+import puppeteer from 'puppeteer'
+import timers from 'timers/promises'
 
-const fs = require('fs/promises')
-const tempDir = require('temp-dir')
-const puppeteer = require('puppeteer')
-const timers = require('timers/promises')
-
-module.exports = async ({ url, width = 1024, height = 768, wait = 0 }) => {
+export default async ({ url, width = 1024, height = 768, wait = 0 }) => {
   const cwd = `${tempDir}/${Date.now()}${Math.random()}`
   await fs.mkdir(cwd)
   const browser = await puppeteer.launch({ args: ['--no-sandbox'] })

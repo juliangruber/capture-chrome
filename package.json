@@ -2,6 +2,7 @@
   "name": "capture-chrome",
   "description": "Capture screenshots using Chrome",
   "version": "3.0.1",
+  "type": "module",
   "repository": {
     "type": "git",
     "url": "git://github.com/juliangruber/capture-chrome.git"

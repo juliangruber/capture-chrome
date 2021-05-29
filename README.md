@@ -13,15 +13,12 @@ to date binary for you.
 Capture a `1024x768` screenshot of [github.com](http://github.com):
 
 ```js
-const capture = require('capture-chrome')
-const fs = require('fs')
+import capture from 'capture-chrome'
+import fs from 'fs/promises'
 
-capture({
-  url: 'https://github.com/'
-}).then(screenshot => {
-  fs.writeFileSync(`${__dirname}/example.png`, screenshot)
-  console.log('open example.png')
-})
+const screenshot = await capture({ url: 'https://github.com/' })
+await fs.writeFile('./example.png', screenshot)
+console.log('open example.png')
 ```
 
 ![github.com](https://raw.github.com/juliangruber/capture-chrome/master/example.png)
